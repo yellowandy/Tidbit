@@ -643,6 +643,17 @@ foreach($module_keys as $module)
         }
     }
 
+	if ($module == 'Emails') {
+
+		$desc = $ibfd->generateGibberish(0);
+
+		$insertQuery = "INSERT INTO emails_text (email_id, from_addr, to_addrs, description, description_html) SELECT id, 'johndoe@example.com', 'melany@example.com', '$desc', '$desc' FROM emails";
+
+		$result = $GLOBALS['db']->query($insertQuery);
+		die("Done with emails text");
+	}
+
+
 	if ($module == 'Teams') {
 		require_once('modules/Teams/TeamSet.php');
         require_once('modules/Teams/TeamSetManager.php');
