@@ -650,7 +650,7 @@ foreach($module_keys as $module)
 		$insertQuery = "INSERT INTO emails_text (email_id, from_addr, to_addrs, description, description_html) SELECT id, 'johndoe@example.com', 'melany@example.com', '$desc', '$desc' FROM emails";
 
 		$result = $GLOBALS['db']->query($insertQuery);
-		die("Done with emails text");
+
 	}
 
 
